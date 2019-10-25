@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../components/Home'
+import Home from '@/components/Home'
 
 Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
-  router:[
+  routes:[
     {
       path: '/',
       name: 'Home',
-      components: Home
+      component: Home
     }
   ]
 })
