@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
-import vuetify from './plugins/vuetify';
+import vuetify from './plugins/vuetify'
 import firebase from 'firebase'
-import VueFire from 'vuefire'
-import router from './routes/index'
+import router from './router/index'
+import { firestorePlugin } from 'vuefire'
+
+Vue.use(firestorePlugin)
 
 Vue.config.productionTip = false
 
@@ -23,11 +25,9 @@ const firebaseApp = firebase.initializeApp(firebaseConfig)
 export const firestore = firebaseApp.firestore()
 export const storage = firebase.storage().ref('/images')
 
-Vue.use(VueFire)
-
 new Vue({
   vuetify,
   render: h => h(App),
   router,
-  components: {App}
+  components: { App }
 }).$mount('#app')
